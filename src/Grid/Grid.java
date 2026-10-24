@@ -11,27 +11,25 @@ public class Grid {
     final private int  HORIZONTAL_LINES = 10;
 
     // structure
-    private static char[][] map = {{'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
-            {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'}};
 
-    public static char[][] getMap() {
-        return map;
-    }
+    private char[][] map;
 
-    public static void setMap(char[][] map) {
-        Grid.map = map;
+    public Grid() {
+        this.map =  new char[][]{{'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'}};
     }
 
 
     // method for creating an array
+
     public char[][] get2DMap() {
         // structure for map
         char[][] mapChar = new char[VERTICAL_LINES][HORIZONTAL_LINES];
@@ -42,6 +40,11 @@ public class Grid {
            }
         }
         return mapChar;
+    }
+
+    // MOVE ON THE MAP
+    public void moveOnMap(int coordinateX, int coordinateY, char player) {
+        this.map[coordinateX][coordinateY] =  player;
     }
 
     // print map
